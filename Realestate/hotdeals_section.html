@@ -1,0 +1,72 @@
+<!-- Hot Deals Tab Content -->
+<div id="hotdeals" class="tab-content">
+    <h2 style="margin-bottom: 20px;">🔥 Hot Deals Geographic Scanner</h2>
+    
+    <div style="background: linear-gradient(135deg, #ef4444, #f59e0b); padding: 20px; border-radius: 12px; margin-bottom: 30px; color: white;">
+        <div class="form-grid" style="align-items: end;">
+            <div class="form-group">
+                <label style="color: white;">Center Zip Code</label>
+                <input type="text" id="hotdeals-zip" placeholder="32801" value="32801">
+            </div>
+            <div class="form-group">
+                <label style="color: white;">Radius (miles)</label>
+                <select id="hotdeals-radius">
+                    <option value="25">25 miles</option>
+                    <option value="50">50 miles</option>
+                    <option value="100" selected>100 miles</option>
+                    <option value="200">200 miles</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label style="color: white;">Min Profit</label>
+                <input type="number" id="hotdeals-minprofit" value="10000">
+            </div>
+            <div class="form-group">
+                <label style="color: white;">Min Score</label>
+                <input type="number" id="hotdeals-minscore" value="70" max="100">
+            </div>
+            <button class="btn" onclick="app.scanHotDeals()" style="background: white; color: #ef4444; font-weight: bold; padding: 12px 30px;">
+                🔍 SCAN NOW
+            </button>
+        </div>
+    </div>
+    
+    <div class="dashboard-grid" id="hotDealsMetrics" style="margin-bottom: 30px;">
+        <div class="stat-card">
+            <h3>Hottest Deal</h3>
+            <div class="value" id="hottestDeal">-</div>
+        </div>
+        <div class="stat-card">
+            <h3>Deals Found</h3>
+            <div class="value" id="dealsFound">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Avg Score</h3>
+            <div class="value" id="avgScore">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Total Profit</h3>
+            <div class="value" id="totalProfit">$0</div>
+        </div>
+    </div>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Score</th>
+                    <th>Address</th>
+                    <th>Distance</th>
+                    <th>Status</th>
+                    <th>ARV</th>
+                    <th>MAO</th>
+                    <th>Profit</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="hotDealsTable">
+                <tr><td colspan="8" style="text-align: center; padding: 40px;">Click "SCAN NOW" to find hot deals in your area</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
